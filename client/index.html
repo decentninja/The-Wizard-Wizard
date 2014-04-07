@@ -3,14 +3,22 @@
 	<meta charset="utf-8">
 </head>
 
-<body>
-</body>
+<template name="layout">
+	<div class="flex">
+		<div class="container-fluid wizard">
+			{{> yield}}
+		</div>
+		<div class="flowchart">
+			TODO d3.js graph
+		</div>
+	</div>
+</template>
 
 <template name="home">
-	<h1>Hello</h1>
+	<h1>The Wizard Wizard</h1>
 	<table>
 		<tr>
-		{{#each this}}
+		{{#each publicstartingnodes}}
 			<td>
 				<a href="/flows/{{_id}}">
 					{{text}}

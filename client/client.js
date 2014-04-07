@@ -4,7 +4,10 @@ Router.map(function() {
 	this.route("home", {
 		path: "/",
 		data: function() {
-			return flows.find({publicstartingnode: true})
+			return {
+				publicstartingnodes: flows.find({publicstartingnode: true}),
+				allNodes: flows.find({})
+			}
 		}
 	})
 	this.route("flow", {
@@ -16,7 +19,8 @@ Router.map(function() {
 })
 
 Router.configure({
-	notFoundTemplate: 'notFound'
+	notFoundTemplate: 'notFound',
+	layoutTemplate: 'layout'
 })
 
 Handlebars.registerHelper('arrayify', function(obj) {
