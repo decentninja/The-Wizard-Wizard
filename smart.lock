@@ -2,19 +2,13 @@
   "meteor": {},
   "dependencies": {
     "basePackages": {
-      "iron-router": {},
-      "normalize.css": {}
+      "iron-router": {}
     },
     "packages": {
       "iron-router": {
         "git": "https://github.com/EventedMind/iron-router.git",
         "tag": "v0.7.0",
         "commit": "05f34bc48c4cad9fdaa366c1ddcabe6980232ece"
-      },
-      "normalize.css": {
-        "git": "https://github.com/rithis/meteor-normalize.css",
-        "tag": "v2.0.1",
-        "commit": "671aba13223dd7d7ec1d26a6b2461943d7c4fa18"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",
