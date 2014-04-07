@@ -14,3 +14,4 @@ Setup
 	cd The-Wizard-Wizard
 	mrt install
 	mrt run
+	open http://localhost:3000
