@@ -6,7 +6,14 @@
 <template name="layout">
 	<div class="flex">
 		<div class="container-fluid wizard">
-			{{> yield}}
+			<article>
+				{{> yield}}
+			</article>
+			<footer>
+				<img src="andreas.jpg">
+				<a href="mailto:anlinn@kth.se">Andreas Linn</a>
+				<a href="sootn.se">sootn.se</a>
+			</footer>
 		</div>
 		<div class="flowchart">
 			TODO d3.js graph
