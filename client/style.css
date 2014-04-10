@@ -1,5 +1,9 @@
 html, body {
-    height: 100%;    
+    height: 100%;
+}
+
+a, a:hover {
+	color: rgb(246,207,40);
 }
 
 .flex {
@@ -9,17 +13,20 @@ html, body {
 
 .wizard {
 	width: 50%;
+	background-color: #E2007F;
 }
 
 .flowchart {
 	flex: 1 1 auto;
-	background-color: lightblue;
+	background: url('/default_background.jpg') no-repeat fixed;
+	-webkit-filter: grayscale(100%);
+	opacity: 0.9;
 }
 
 footer {
 	position: absolute;
 	bottom: 25px;
-	text-align: center ;
+	text-align: center;
 	width: 50%;
 	left: 0;
 }

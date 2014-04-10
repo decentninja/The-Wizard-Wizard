@@ -7,6 +7,11 @@ Meteor.startup(function () {
 			_id: "1",
 			text: "Hjälp till på Datasektionen",
 			publicstartingnode: true,
+			custom: {
+				color: "#E2007F",
+				image: "http://www.datasektionen.se/sektionen/grafik/skold.svg"
+			},
+			body: "Detta är lite text bla bla bla",
 			choices: {
 				"Nej fan heller": 2,
 				"Ja!": 3,

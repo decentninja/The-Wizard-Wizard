@@ -4,16 +4,14 @@ Router.map(function() {
 	this.route("home", {
 		path: "/",
 		data: function() {
-			return {
-				publicstartingnodes: flows.find({publicstartingnode: true}),
-				allNodes: flows.find({})
-			}
+			return flows.find({publicstartingnode: true})
 		}
 	})
 	this.route("flow", {
 		path: "/flows/:_id",
 		data: function() {
-			return flows.findOne(this.params._id)
+			var data = flows.findOne(this.params._id)
+			return data
 		}
 	})
 })

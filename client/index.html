@@ -10,13 +10,13 @@
 				{{> yield}}
 			</article>
 			<footer>
-				<img src="andreas.jpg">
+				<img src="/andreas.jpg">
 				<a href="mailto:anlinn@kth.se">Andreas Linn</a>
 				<a href="sootn.se">sootn.se</a>
 			</footer>
 		</div>
 		<div class="flowchart">
-			TODO d3.js graph
+			{{> graph}}
 		</div>
 	</div>
 </template>
@@ -25,7 +25,7 @@
 	<h1>The Wizard Wizard</h1>
 	<table>
 		<tr>
-		{{#each publicstartingnodes}}
+		{{#each this}}
 			<td>
 				<a href="/flows/{{_id}}">
 					{{text}}
@@ -40,7 +40,8 @@
 </template>
 
 <template name="flow">
-	<h1>{{text}}</h1>
+	<h3>{{text}}</h3>
+	<p>{{body}}</p>
 	<ul>
 	{{#each arrayify choices}}
 		<li>
@@ -54,4 +55,10 @@
 
 <template name="notFound">
 	404
+</template>
+
+<template name="graph">
+	<div>
+		<svg></svg>
+	</div>
 </template>
