@@ -71,7 +71,6 @@ footer img {
 }
 
 .login, .login:hover, .login:visited, .login:active {
-	background-color: inherit;
 	float: right;
 	margin-top: 10px;
 }
@@ -82,4 +81,23 @@ footer img {
 
 .login li {
 	list-style-type: none;
+}
+
+label {
+	color: rgb(246,207,40);
+	font-weight: normal;
+	font-size: 14px;
+}
+
+*[contentEditable=true] {
+	border-bottom: 1px dashed #000;
+    text-decoration: none;
+}
+
+
+.addchoice {
+	color: #333;
+}
+.removechoice {
+	color: #333;
 }

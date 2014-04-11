@@ -6,7 +6,15 @@
 <template name="layout">
 	<div class="flex">
 		<div class="container-fluid wizard">
-			<button class="btn login">{{> loginButtons }}</button>
+			<div class="login">
+				{{> loginButtons }}
+				{{#if currentUser}}
+					<a class="save" href="#">save</a><br>
+					<a class="new" href="#">new</a><br>
+					<a class="remove" href="#">remove</a><br>
+					<label>frontpage <input class="public" checked="{{publicstartingnode}}" type="checkbox"></label>
+				{{/if}}
+			</div>
 			<article>
 				{{> yield}}
 			</article>
@@ -41,17 +49,33 @@
 </template>
 
 <template name="flow">
-	<h3>{{text}}</h3>
-	<p>{{body}}</p>
-	<ul>
-	{{#each arrayify choices}}
-		<li>
-			<a href="{{value}}">
-				{{key}}
-			</a>
-		</li>
-	{{/each}}
+	{{#if currentUser}}
+		<h3 class="text" contentEditable="true">{{text}}</h3>
+		id / url: <span class="idid" contentEditable="true">{{_id}}</span>
+		<p class="body" contentEditable="true">{{body}}</p>
+	{{else}}
+		<h3>{{text}}</h3>
+		<p>{{body}}</p>
+	{{/if}}
+
+	<ul class="choices">
+		{{#each arrayify choices}}
+			<li>
+				<a href="{{value}}">
+					{{key}}
+				</a>
+				{{#if currentUser}}
+					<a href="#" class="removechoice"><span class="glyphicon glyphicon-trash"></span></a>
+				{{/if}}
+			</li>
+		{{/each}}
 	</ul>
+		{{#if currentUser}}
+		<input class="choicetitle" placeholder="choice">
+		<input class="to" placeholder="to">
+		<a href="#" class="addchoice"><span class="glyphicon glyphicon-plus"></span></a>
+	{{/if}}
+
 </template>
 
 <template name="notFound">
