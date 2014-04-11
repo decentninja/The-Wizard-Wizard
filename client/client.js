@@ -4,6 +4,7 @@ Router.map(function() {
 	this.route("home", {
 		path: "/",
 		data: function() {
+			Session.set("selected", -1)
 			return flows.find({publicstartingnode: true})
 		}
 	})
@@ -176,9 +177,14 @@ Template.graph.rendered = function() {
 					return "translate(" + x + "," + y + ") "
 					//	+ "rotate(" + rotation + ")"
 				})
+			})
+			setInterval(function() {
+				var id = Session.get("selected")
+				if(id === -1) {
+					graph.attr("transform", "scale(0.5)")
+				}
 
 				// Center on selected
-				var id = Session.get("selected")
 				if(id) {
 					var selected = d3.select("#node_" + Session.get("selected"))
 					if(selected[0][0]) {
@@ -193,7 +199,7 @@ Template.graph.rendered = function() {
 						)
 					}
 				}
-			})
+			}, 1000/30)
 		})
 	}
 
