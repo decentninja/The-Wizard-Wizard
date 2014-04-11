@@ -38,13 +38,6 @@ Meteor.startup(function () {
 			_id: "5",
 			text: "Det kommer bli awesome!",
 		})
-		flows.insert({
-			text: "Kanal plan",
-			blub: [{
-				name: "1 2 3, fanta och rose",
-				to: 5
-			}]
-		})
 	}
 })
 
