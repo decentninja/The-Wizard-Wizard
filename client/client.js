@@ -199,7 +199,7 @@ Template.graph.rendered = function() {
 						)
 					}
 				}
-			}, 1000/30)
+			}, 1000/60)
 		})
 	}
 
