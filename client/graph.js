@@ -1,45 +1,3 @@
-window.flows = new Meteor.Collection("flows")	// Globalscope for debugging
-
-Meteor.subscribe("flows")
-
-Router.map(function() {
-	this.route("home", {
-		path: "/",
-		data: function() {
-			Session.set("selected", -1)
-			return flows.find({publicstartingnode: true})
-		}
-	})
-	this.route("flow", {
-		path: "/flows/:_id",
-		data: function() {
-			var data = flows.findOne(this.params._id)
-			if(data) {
-				Session.set("selected", data._id)
-			}
-			return data
-		}
-	})
-})
-
-Router.configure({
-	notFoundTemplate: 'notFound',
-	layoutTemplate: 'layout'
-})
-
-Handlebars.registerHelper('arrayify', function(obj) {
-    var r = []
-    for(var key in obj) {
-    	r.push({
-    		"key": key,
-    		value: obj[key]
-    	})
-    }
-    return r
-})
-
-Template._loginButtonsMessages.infoMessage = "@kth.se mail required"
-
 Template.graph.data = function() {
 	var data = flows.find({})
 }
@@ -214,7 +172,9 @@ Template.graph.rendered = function() {
 		})
 	}
 
-	Template.graph.destroyed = function() {
-		this.handle && this.handle.stop()
-	}
+
+}
+
+Template.graph.destroyed = function() {
+	this.handle && this.handle.stop()
 }
