@@ -151,10 +151,14 @@ Template.graph.rendered = function() {
 			    .data(force.nodes())
 			    .enter()
 			    .append("svg:text")
+			    .attr("class", "nodetext")
 			    .attr("x", 10)
 			    .attr("y", 6)
 				.text(function(d) {
 					return d.name
+				})
+				.on("click", function(d) {
+					Router.go("/flows/" + d.id)
 				})
 
 			force.on("tick", function() {
