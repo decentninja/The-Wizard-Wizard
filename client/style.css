@@ -44,8 +44,13 @@ footer img {
 	fill: #E2007F;
 }
 
-.followed {
+.node[followed="true"] {
 	fill: #b70067;
+}
+
+.node[at="true"] {
+	stroke: black;
+	stroke-width: 2px;
 }
 
 .link {

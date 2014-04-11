@@ -190,6 +190,8 @@ Template.graph.rendered = function() {
 					graph.attr("transform", "scale(0.5)")
 				}
 
+				d3.selectAll(".node").attr("at", false)
+
 				// Center on selected
 				if(id) {
 					var selected = d3.select("#node_" + Session.get("selected"))
@@ -198,7 +200,8 @@ Template.graph.rendered = function() {
 						var height = document.querySelector(".flowchart").offsetHeight
 						var x = -selected.attr("cx") + width / 2
 						var y = -selected.attr("cy") + height / 2
-						selected.attr("class", "followed")
+						selected.attr("followed", "true")
+						selected.attr("at", true)
 						graph.attr(
 							"transform",
 							"translate(" + [x, y] + ")"
