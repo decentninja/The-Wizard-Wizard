@@ -69,3 +69,17 @@ footer img {
 .nodetext {
 	cursor: pointer;
 }
+
+.login, .login:hover, .login:visited, .login:active {
+	background-color: inherit;
+	float: right;
+	margin-top: 10px;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:visited, .btn-primary:active {
+	background-color: #E2007F;
+}
+
+.login li {
+	list-style-type: none;
+}

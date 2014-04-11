@@ -38,6 +38,8 @@ Handlebars.registerHelper('arrayify', function(obj) {
     return r
 })
 
+Template._loginButtonsMessages.infoMessage = "@kth.se mail required"
+
 Template.graph.data = function() {
 	var data = flows.find({})
 }
@@ -122,7 +124,7 @@ Template.graph.rendered = function() {
 			var arrow = graph.append('svg:defs').append('svg:marker')
 			    .attr('id', 'triangle')
 			    .attr('viewBox', '0 -5 10 10')
-			    .attr('refX', 15)
+			    .attr('refX', 17)
 			    .attr('markerWidth', 5)
 			    .attr('class', 'arrow')
 			    .attr('markerHeight', 5)

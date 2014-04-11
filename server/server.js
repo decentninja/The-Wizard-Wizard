@@ -40,3 +40,17 @@ Meteor.startup(function () {
 Meteor.publish("flows", function() {
 	return flows.find();
 })
+
+function ok(userId) {
+	return Boolean(userId)
+}
+Accounts.config({
+	sendVerificationEmail: true,
+	restrictCreationByEmailDomain: "kth.se"
+})
+
+flows.allow({
+	insert: ok,
+	remove: ok,
+	update: ok
+})
