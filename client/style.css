@@ -19,8 +19,6 @@ a, a:hover {
 .flowchart {
 	flex: 1 1 auto;
 	background: url('/default_background.jpg') no-repeat fixed;
-	-webkit-filter: grayscale(100%);
-	opacity: 0.9;
 }
 
 footer {
@@ -41,3 +39,25 @@ footer img {
 	margin-bottom: 10px;
 	display: inline-block;
 }
+
+.node {
+	fill: #E2007F;
+}
+
+.followed {
+	fill: #b70067;
+}
+
+.link {
+	stroke: rgb(246,207,40);
+	stroke-width: 2px;
+}
+
+.arrow {
+	fill: rgb(246,207,40);
+}
+
+.link_label {
+	font: 10px sans-serif white;
+}
+

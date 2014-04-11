@@ -30,5 +30,13 @@ Meteor.startup(function () {
 				"Ordna en filmkväll": 5
 			}
 		})
+		flows.insert({
+			_id: "4",
+			text: "Coolt",
+		})
+		flows.insert({
+			_id: "5",
+			text: "Det kommer bli awesome!",
+		})
 	}
 })
