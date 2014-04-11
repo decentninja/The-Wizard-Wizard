@@ -40,3 +40,7 @@ Meteor.startup(function () {
 		})
 	}
 })
+
+Meteor.publish("flows", function() {
+	return flows.find();
+})

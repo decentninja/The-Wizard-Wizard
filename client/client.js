@@ -1,5 +1,7 @@
 window.flows = new Meteor.Collection("flows")	// Globalscope for debugging
 
+Meteor.subscribe("flows")
+
 Router.map(function() {
 	this.route("home", {
 		path: "/",
